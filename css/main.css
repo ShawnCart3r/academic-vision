@@ -3,6 +3,135 @@ a {
   text-decoration: none;
 }
 
+/* ====================================
+🌐 Global Reset & Root Variables
+==================================== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #365ad9;
+  --accent-color: #4d8aff;
+  --bg-white: #ffffff;
+  --bg-light: #f5f7fb;
+  --text-dark: #1e1f25;
+  --text-muted: #6c757d;
+  --radius: 10px;
+  --transition: all 0.3s ease;
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --max-width: 1200px;
+}
+
+/* ====================================
+🧱 Base Typography & Structure
+==================================== */
+html,
+body {
+  font-family: "Segoe UI", "Helvetica Neue", sans-serif;
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+/* ====================================
+🔧 Utility Classes
+==================================== */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+/* Responsive Grid */
+.grid {
+  display: grid;
+  gap: 20px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr;
+  }
+}
 .sticky-nav {
   position: sticky;
   top: 0;
@@ -655,18 +784,201 @@ a {
   background: #1e2656;
 }
 
-/* standard */
+/*mission */
+/* services */
+/*demo */
+/*team */
+/* join */
+/*advisory */
+/* about */
+/* Google Calender */
+.calendar-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.calendar-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #2e66e5;
+}
+
+.calendar-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.calendar-iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+}
+
+:root {
+  --primary-blue: #3f66e0;
+  --blue-bg: #f8fbff;
+  --text-dark: #1a1a1a;
+  --text-muted: #555;
+  --text-soft: #444;
+  --radius-md: 12px;
+  --shadow-light: 0 6px 16px rgba(0, 0, 0, 0.06);
+  --shadow-hover: 0 10px 24px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease;
+}
+
+/* ============================
+📘 Advisory Section
+============================ */
+.academic-advisory-section {
+  background: #fff;
+  padding: 100px 24px;
+  font-family: "Segoe UI", sans-serif;
+  animation: fadeSlideUp 0.8s ease-out;
+}
+
+.academic-advisory-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================
+📌 Section Title & Intro
+============================ */
+.academic-advisory-heading {
+  font-size: 40px;
+  text-align: center;
+  font-weight: 900;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.academic-advisory-heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary-blue);
+  margin: 12px auto 0;
+  border-radius: 2px;
+}
+
+.academic-advisory-intro {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px;
+  font-size: 18px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* ============================
+📋 Advisory Cards Grid
+============================ */
+.academic-advisory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+.academic-advisory-card {
+  background: var(--blue-bg);
+  border-left: 6px solid var(--primary-blue);
+  padding: 28px 24px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: transform, box-shadow, opacity;
+}
+
+.academic-advisory-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.academic-advisory-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
+}
+
+.academic-advisory-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
+}
+
+.academic-advisory-card:hover h3 {
+  color: var(--primary-blue);
+}
+
+.academic-advisory-card p {
+  font-size: 15.5px;
+  color: var(--text-soft);
+  line-height: 1.7;
+}
+
+/* ============================
+📱 Responsive
+============================ */
+@media (max-width: 768px) {
+  .academic-advisory-heading {
+    font-size: 30px;
+  }
+  .academic-advisory-intro {
+    font-size: 16px;
+  }
+}
+/* ============================
+💫 Fade Slide Up Animation
+============================ */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+:root {
+  --primary-color: #3b65c4;
+  --gold-color: #ffd700;
+  --silver-color: #c0c0c0;
+  --bronze-color: #cd7f32;
+}
+
+/* ============================
+🎖️ Standards Section Styling
+============================ */
 .standards-section {
-  background: linear-gradient(135deg, #eef2f3, #d9e4f5);
-  padding: 80px 20px;
+  background: linear-gradient(135deg, #f0f4f8, #dbe8fa);
+  padding: 100px 20px;
   text-align: center;
 }
 
 .section-title {
-  font-size: 36px;
-  font-weight: 800;
-  margin-bottom: 50px;
-  color: #1a1a1a;
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 10px;
+  color: #14213d;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: #5a5a5a;
+  margin-bottom: 60px;
+  font-weight: 500;
 }
 
 .standards-grid {
@@ -676,45 +988,113 @@ a {
   justify-content: center;
 }
 
+/* 🚀 Card Base Styles */
 .standard-card {
-  background: white;
-  padding: 30px 24px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  padding: 32px 26px;
+  border-radius: 22px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
   width: 100%;
   max-width: 320px;
   text-align: left;
   position: relative;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
   overflow: hidden;
+  border: 1px solid #e0e6ef;
+  /* Entry Animation Setup */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, opacity 0.6s ease;
 }
 
-.standard-card::before {
+/* 🪄 When card is visible */
+.standard-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🖱️ Hover Pop-Up + 3D Effect */
+.standard-card:hover {
+  transform: perspective(800px) rotateX(1.5deg) rotateY(1.5deg) scale(1.02);
+}
+
+/* ✨ Animated Gradient Shine */
+.standard-card::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.2), transparent);
+  top: 0;
+  left: -150%;
+  width: 300%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: all 0.4s ease;
   pointer-events: none;
 }
 
-.standard-card:hover {
-  transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+.standard-card:hover::after {
+  left: 100%;
+  transition: all 1.2s ease-in-out;
 }
 
+/* 💫 Hover Glow by Tier */
+.standard-card.gold:hover {
+  box-shadow: 0 18px 45px rgba(255, 215, 0, 0.4);
+}
+
+.standard-card.silver:hover {
+  box-shadow: 0 18px 45px rgba(192, 192, 192, 0.35);
+}
+
+.standard-card.bronze:hover {
+  box-shadow: 0 18px 45px rgba(205, 127, 50, 0.35);
+}
+
+/* Floating Badge */
+.badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 26px;
+  z-index: 2;
+}
+
+.gold .badge {
+  color: var(--gold-color);
+}
+
+.silver .badge {
+  color: var(--silver-color);
+}
+
+.bronze .badge {
+  color: var(--bronze-color);
+}
+
+/* Card Header + Text */
 .standard-card h3 {
-  font-size: 24px;
-  margin-bottom: 12px;
-  color: #1a1a1a;
+  font-size: 26px;
+  font-weight: 900;
+  margin-bottom: 16px;
+  color: #121212;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  letter-spacing: -0.3px;
+}
+
+.tier-label {
+  font-size: 26px;
+  line-height: 1;
 }
 
 .standard-card p {
-  font-size: 15px;
-  margin-bottom: 20px;
-  color: #444;
-  line-height: 1.6;
+  font-size: 16px;
+  margin-bottom: 22px;
+  color: #333;
+  line-height: 1.75;
+  font-weight: 500;
 }
 
+/* 🔘 Stylish Bullet List */
 .standard-card ul {
   list-style: none;
   padding: 0;
@@ -722,50 +1102,69 @@ a {
 }
 
 .standard-card ul li {
-  font-size: 14.5px;
-  padding: 8px 0;
-  border-bottom: 1px solid #eee;
-  color: #333;
+  font-size: 15.5px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ececec;
+  color: #2b2b2b;
+  position: relative;
+  padding-left: 20px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: slideFadeIn 0.4s ease forwards;
 }
 
-/* ✨ Tier Color Accents */
+.standard-card.visible ul li:nth-child(1) {
+  animation-delay: 0.3s;
+}
+
+.standard-card.visible ul li:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.standard-card.visible ul li:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.standard-card.visible ul li:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.standard-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 1;
+}
+
+@keyframes slideFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* 🎖️ Tier Color Backgrounds */
 .standard-card.gold {
-  border-top: 6px solid #ffd700;
-  background: linear-gradient(to bottom, #fffbe6, #fff6c3);
+  border-top: 6px solid var(--gold-color);
+  background: linear-gradient(to bottom, #fffbe6, #fff3b0);
 }
 
 .standard-card.silver {
-  border-top: 6px solid #c0c0c0;
-  background: linear-gradient(to bottom, #f7f7f7, #e5e5e5);
+  border-top: 6px solid var(--silver-color);
+  background: linear-gradient(to bottom, #f7f7f7, #e6e6e6);
 }
 
 .standard-card.bronze {
-  border-top: 6px solid #cd7f32;
-  background: linear-gradient(to bottom, #fff4e6, #ffddb3);
+  border-top: 6px solid var(--bronze-color);
+  background: linear-gradient(to bottom, #fff4e6, #ffd6a5);
 }
 
-/* Tier Emojis or Icons */
-.standard-card h3::before {
-  display: inline-block;
-  margin-right: 8px;
-}
-
-.standard-card.gold h3::before {
-  content: "🥇";
-}
-
-.standard-card.silver h3::before {
-  content: "🥈";
-}
-
-.standard-card.bronze h3::before {
-  content: "🥉";
-}
-
-/* Responsive */
+/* 📱 Responsive Styles */
 @media (max-width: 992px) {
   .standard-card {
-    max-width: 45%;
+    max-width: 47%;
   }
 }
 @media (max-width: 768px) {
@@ -777,72 +1176,917 @@ a {
     max-width: 90%;
   }
   .section-title {
-    font-size: 28px;
+    font-size: 30px;
+  }
+  .section-subtitle {
+    font-size: 16px;
   }
 }
-/*mission */
-header {
-  background: #004080;
-  color: #fff;
-  padding: 20px;
+/* CTA Button */
+.standards-cta-btn {
+  display: inline-block;
+  margin-top: 50px;
+  padding: 14px 32px;
+  background: var(--primary-color);
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.standards-cta-btn:hover {
+  background: #2d4fb2;
+  transform: translateY(-2px);
+}
+
+:root {
+  --primary-blue: #3f66e0;
+  --blue-bg: #f8fbff;
+  --badge-bg: #e5f0ff;
+  --text-dark: #1a1a1a;
+  --text-muted: #555;
+  --gold: #f7b500;
+  --shadow-light: 0 8px 20px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 12px 28px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* ============================
+📊 QSM Section
+============================ */
+.academic-qsm-section {
+  background: var(--blue-bg);
+  padding: 100px 24px;
+  font-family: "Segoe UI", sans-serif;
+  text-align: center;
+  animation: fadeSlideUp 0.8s ease-out;
+}
+
+.academic-qsm-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ============================
+📌 Headings
+============================ */
+.academic-qsm-heading {
+  font-size: 38px;
+  font-weight: 900;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.academic-qsm-heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary-blue);
+  margin: 12px auto 0;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+.academic-qsm-subtext {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 56px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+}
+
+/* ============================
+📦 QSM Card Layout
+============================ */
+.academic-qsm-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: var(--shadow-light);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 32px;
+  gap: 32px;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: var(--transition), opacity 0.5s ease;
+  will-change: transform, box-shadow, opacity;
+}
+
+.academic-qsm-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================
+🖼️ Image
+============================ */
+.academic-qsm-image img {
+  width: 180px;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 100%;
+  border: 4px solid var(--primary-blue);
+  box-shadow: 0 4px 12px rgba(63, 102, 224, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.academic-qsm-card:hover .academic-qsm-image img {
+  transform: scale(1.05);
+}
+
+/* ============================
+📄 Content Block
+============================ */
+.academic-qsm-content {
+  max-width: 500px;
+  text-align: left;
+}
+
+.academic-qsm-badge {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary-blue);
+  background: var(--badge-bg);
+  padding: 6px 12px;
+  display: inline-block;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.academic-qsm-button {
+  display: inline-block;
+  background: var(--primary-blue);
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 16px;
+}
+
+.academic-qsm-button:hover {
+  background: #2c4ecf;
+  transform: translateY(-2px);
+}
+
+.academic-qsm-rating {
+  font-size: 24px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  margin-top: 16px;
+}
+
+/* ============================
+📱 Responsive
+============================ */
+@media (max-width: 768px) {
+  .academic-qsm-heading {
+    font-size: 30px;
+  }
+  .academic-qsm-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 28px 20px;
+  }
+  .academic-qsm-content {
+    text-align: center;
+  }
+  .academic-qsm-image img {
+    width: 140px;
+    height: 140px;
+  }
+}
+/* ============================
+💫 Animation
+============================ */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+:root {
+  --primary-blue: #3f66e0;
+  --blue-bg: #f6faff;
+  --highlight-bg: #eaf3fd;
+  --text-dark: #1a1a1a;
+  --text-muted: #555;
+  --text-soft: #444;
+  --shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 10px 24px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s ease;
+}
+
+/* ============================
+🌐 Join Section
+============================ */
+.academic-join-section {
+  background: var(--blue-bg);
+  padding: 100px 24px;
+  font-family: "Segoe UI", sans-serif;
+  animation: fadeSlideUp 0.8s ease-out;
+}
+
+.academic-join-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ============================
+📌 Headings & Intro
+============================ */
+.academic-join-heading {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 900;
+  margin-bottom: 12px;
+  color: var(--text-dark);
+  position: relative;
+}
+
+.academic-join-heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary-blue);
+  margin: 12px auto 0;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+.academic-join-intro {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 50px;
+}
+
+/* ============================
+📖 Content Blocks
+============================ */
+.academic-join-content p,
+.academic-join-focus p,
+.academic-join-call p {
+  font-size: 17px;
+  line-height: 1.75;
+  color: var(--text-soft);
+  margin-bottom: 24px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 }
 
+.academic-join-focus h3,
+.academic-join-call h3,
+.academic-join-team h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-top: 60px;
+  margin-bottom: 20px;
+  color: var(--primary-blue);
+  text-align: center;
+}
+
+/* ============================
+💡 Highlight Block
+============================ */
+.academic-join-highlight {
+  background: var(--highlight-bg);
+  padding: 20px 24px;
+  border-left: 5px solid var(--primary-blue);
+  border-radius: 10px;
+  font-weight: 600;
+  color: #222;
+  box-shadow: var(--shadow);
+  margin-top: 28px;
+}
+
+/* ============================
+📣 CTA Button
+============================ */
+.academic-join-button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.academic-join-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 14px 32px;
+  background: var(--primary-blue);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  border-radius: 999px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  justify-content: center;
+}
+
+.academic-join-button:hover {
+  background: #2c4ecf;
+  transform: translateY(-2px);
+}
+
+/* ============================
+👥 Team Grid & Cards
+============================ */
+.academic-join-team-desc {
+  font-size: 16px;
+  margin-bottom: 30px;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+.academic-join-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+
+.academic-team-card {
+  background: #fff;
+  padding: 28px 24px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.academic-team-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.academic-team-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.academic-team-card img {
+  width: 120px;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid var(--primary-blue);
+  margin-bottom: 16px;
+  box-shadow: 0 4px 12px rgba(63, 102, 224, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.academic-team-card:hover img {
+  transform: scale(1.05);
+}
+
+.academic-team-card h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+.academic-team-card:hover h4 {
+  color: var(--primary-blue);
+}
+
+.academic-team-card p {
+  font-size: 14.5px;
+  color: #666;
+}
+
+/* ============================
+📱 Responsive
+============================ */
+@media (max-width: 768px) {
+  .academic-join-heading {
+    font-size: 30px;
+  }
+  .academic-join-intro {
+    font-size: 18px;
+  }
+  .academic-join-team-grid {
+    grid-template-columns: 1fr;
+  }
+  .academic-team-card img {
+    width: 100px;
+    height: 100px;
+  }
+  .academic-join-button {
+    padding: 12px 24px;
+    font-size: 15px;
+  }
+}
+/* ============================
+💫 Animation
+============================ */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+:root {
+  --primary-color: #004080;
+  --accent-color: #007acc;
+  --bg-light: #f4f9ff;
+  --text-dark: #1f2d3d;
+  --text-muted: #5a6574;
+  --radius-lg: 12px;
+  --shadow-md: 0 12px 30px rgba(0, 0, 0, 0.06);
+  --transition: all 0.3s ease-in-out;
+}
+
+/* ============================
+🌟 Mission Section Header
+============================ */
+header {
+  background: linear-gradient(135deg, var(--primary-color), #005fa3);
+  color: #fff;
+  padding: 60px 20px;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border-bottom: 4px solid #007acc;
+}
+
 header h1 {
-  margin: 0 0 10px;
+  margin: 0 0 14px;
+  font-size: 2.8rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .subheading {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #e0ecff;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
 
+/* ============================
+📄 Content Container
+============================ */
+.container {
+  padding: 60px 32px;
+  max-width: 960px;
+  margin: 0 auto;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.section-block {
+  margin-bottom: 60px;
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.section-block.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.subsection {
+  margin-bottom: 36px;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  border-left: 6px solid var(--accent-color);
+  padding-left: 14px;
+}
+
+h3 {
+  font-size: 1.4rem;
+  color: #1f3a5a;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-dark);
+  margin-bottom: 18px;
+}
+
+/* ============================
+🔘 Styled Lists
+============================ */
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 28px;
+}
+
+ul li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: var(--text-dark);
+}
+
+ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 10px;
+  height: 10px;
+  background: var(--accent-color);
+  border-radius: 50%;
+}
+
+/* ============================
+🖼️ Hero Image
+============================ */
 .main-image {
   max-width: 100%;
   height: auto;
   display: block;
-  margin: 20px auto;
+  margin: 40px auto 50px;
+  border-radius: 10px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
 }
 
+.main-image:hover {
+  transform: scale(1.02);
+}
+
+/* ============================
+💬 Pull Quote
+============================ */
 .quote {
   background: #e0f0ff;
-  padding: 15px;
-  margin: 20px auto;
+  padding: 24px 28px;
+  margin: 50px auto;
   text-align: center;
   font-style: italic;
+  font-size: 1.2rem;
+  color: #1a2d40;
   max-width: 700px;
-  border-left: 5px solid #007acc;
+  border-left: 6px solid var(--accent-color);
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.04);
 }
 
-.container {
-  padding: 20px;
-  max-width: 960px;
-  margin: auto;
-  background: white;
-}
-
-h2 {
-  color: #004080;
-}
-
-ul {
-  list-style: disc;
-  padding-left: 20px;
-}
-
+/* ============================
+📱 Responsive Adjustments
+============================ */
 @media (max-width: 768px) {
   .container {
-    padding: 15px;
+    padding: 32px 16px;
   }
   header h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
+  }
+  .subheading {
+    font-size: 1.1rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  h3 {
+    font-size: 1.2rem;
+  }
+  .quote {
+    font-size: 1rem;
+    padding: 20px;
+  }
+  ul li {
+    padding-left: 24px;
   }
 }
-/* services */
+/* ============================
+🎬 Simple Fade Up Animation
+============================ */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+:root {
+  --primary-blue: #3f66e0;
+  --light-blue-bg: #eef4ff;
+  --dark-text: #1a1a1a;
+  --soft-text: #444;
+  --bg-gradient-start: #f5f9ff;
+  --bg-gradient-end: #eaf3fd;
+  --white: #ffffff;
+  --radius: 16px;
+  --shadow-light: 0 8px 18px rgba(0, 0, 0, 0.07);
+  --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+  --font-main: "Segoe UI", sans-serif;
+}
+
+/* ================================
+📘 Academic Services Section
+================================ */
 .academic-services-section {
-  background: linear-gradient(to right, #f5f9ff, #eaf3fd);
+  background: linear-gradient(to right, var(--bg-gradient-start), var(--bg-gradient-end));
   padding: 80px 20px;
-  font-family: "Segoe UI", sans-serif;
+  font-family: var(--font-main);
+}
+
+.academic-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ================================
+📝 Section Headings
+================================ */
+.academic-section-heading {
+  font-size: 36px;
+  text-align: center;
+  font-weight: 800;
+  margin-bottom: 16px;
+  color: var(--dark-text);
+}
+
+.academic-section-subtext {
+  font-size: 18px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  color: #555;
+}
+
+/* ================================
+📦 Service Card Grid
+================================ */
+.academic-service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+}
+
+/* ================================
+💼 Individual Service Card
+================================ */
+.academic-service-card {
+  background: var(--white);
+  padding: 24px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+  will-change: transform, box-shadow;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.academic-service-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.15), 0 0 8px rgba(63, 102, 224, 0.15);
+}
+
+.academic-service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.academic-service-header h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 0;
+  line-height: 1.4;
+}
+
+.academic-service-header .arrow {
+  font-size: 18px;
+  margin-left: 12px;
+  transition: transform 0.3s ease;
+  color: var(--primary-blue);
+  transform-origin: center;
+  display: inline-block;
+}
+
+.academic-service-card.open .arrow {
+  transform: rotate(180deg);
+}
+
+/* ================================
+📖 Card Details Section
+================================ */
+.academic-card-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.academic-service-card.open .academic-card-details {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.academic-card-details p {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 12px;
+}
+
+/* ================================
+🎯 Fade-in Animation
+================================ */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.academic-service-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.academic-service-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.academic-service-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.academic-service-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.academic-service-card:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.academic-service-card:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.academic-service-card:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+.academic-service-card:nth-child(8) {
+  animation-delay: 0.7s;
+}
+
+.academic-service-card:nth-child(9) {
+  animation-delay: 0.8s;
+}
+
+.academic-service-card:nth-child(10) {
+  animation-delay: 0.9s;
+}
+
+.academic-service-card:nth-child(11) {
+  animation-delay: 1s;
+}
+
+/* ================================
+🚀 Call-to-Action Banner
+================================ */
+.academic-cta-banner {
+  margin-top: 60px;
+  background: var(--primary-blue);
+  padding: 40px 24px;
+  border-radius: 20px;
+  color: white;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideInUp 0.8s ease 1.2s forwards;
+}
+
+.academic-cta-banner h4 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.academic-cta-banner blockquote {
+  font-style: italic;
+  font-size: 16px;
+  margin: 0 0 12px;
+  color: #e0e0e0;
+}
+
+.academic-cta-banner p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.academic-cta-button {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 12px 28px;
+  background: black;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 999px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.academic-cta-button:hover {
+  background: #222;
+  transform: translateY(-2px);
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ================================
+📱 Responsive Adjustments
+================================ */
+@media (max-width: 768px) {
+  .academic-section-heading {
+    font-size: 28px;
+  }
+  .academic-section-subtext {
+    font-size: 16px;
+  }
+  .academic-cta-banner h4 {
+    font-size: 22px;
+  }
+  .academic-cta-banner p {
+    font-size: 15px;
+  }
+}
+:root {
+  --primary-blue: #3f66e0;
+  --light-blue-bg: #eef4ff;
+  --dark-text: #1a1a1a;
+  --soft-text: #444;
+  --bg-gradient-start: #f5f9ff;
+  --bg-gradient-end: #eaf3fd;
+  --white: #ffffff;
+  --radius: 16px;
+  --shadow-light: 0 8px 18px rgba(0, 0, 0, 0.07);
+  --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.15);
+  --transition: all 0.3s ease;
+  --font-main: "Segoe UI", sans-serif;
+}
+
+/* ================================
+📘 Academic Services Section
+================================ */
+.academic-services-section {
+  background: linear-gradient(to right, var(--bg-gradient-start), var(--bg-gradient-end));
+  padding: 80px 20px;
+  font-family: var(--font-main);
 }
 
 .academic-container {
@@ -855,7 +2099,7 @@ ul {
   text-align: center;
   font-weight: 800;
   margin-bottom: 16px;
-  color: #1a1a1a;
+  color: var(--dark-text);
 }
 
 .academic-section-subtext {
@@ -873,39 +2117,135 @@ ul {
 }
 
 .academic-service-card {
-  background: #ffffff;
+  background: var(--white);
   padding: 24px;
-  border-radius: 16px;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.07);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-light);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   text-align: left;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+  will-change: transform, box-shadow;
+  cursor: pointer;
+  overflow: hidden;
 }
 
 .academic-service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.15), 0 0 8px rgba(63, 102, 224, 0.15);
 }
 
-.academic-service-card h3 {
+.academic-service-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.academic-service-header h3 {
   font-size: 20px;
   font-weight: 700;
-  color: #3f66e0;
-  margin-bottom: 12px;
+  color: var(--primary-blue);
+  margin-bottom: 0;
+  line-height: 1.4;
 }
 
-.academic-service-card p {
+.academic-service-header .arrow {
+  font-size: 18px;
+  margin-left: 12px;
+  transition: transform 0.3s ease;
+  color: var(--primary-blue);
+  transform-origin: center;
+  display: inline-block;
+}
+
+.academic-service-card.open .arrow {
+  transform: rotate(180deg);
+}
+
+.academic-card-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.academic-service-card.open .academic-card-details {
+  max-height: 500px;
+  opacity: 1;
+}
+
+.academic-card-details p {
   font-size: 15px;
   color: #333;
   line-height: 1.6;
+  margin-top: 12px;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.academic-service-card:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.academic-service-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.academic-service-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.academic-service-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.academic-service-card:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.academic-service-card:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.academic-service-card:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+.academic-service-card:nth-child(8) {
+  animation-delay: 0.7s;
+}
+
+.academic-service-card:nth-child(9) {
+  animation-delay: 0.8s;
+}
+
+.academic-service-card:nth-child(10) {
+  animation-delay: 0.9s;
+}
+
+.academic-service-card:nth-child(11) {
+  animation-delay: 1s;
 }
 
 .academic-cta-banner {
   margin-top: 60px;
-  background: #3f66e0;
+  background: var(--primary-blue);
   padding: 40px 24px;
   border-radius: 20px;
   color: white;
   text-align: center;
+  opacity: 0;
+  transform: translateY(40px);
+  animation: slideInUp 0.8s ease 1.2s forwards;
 }
 
 .academic-cta-banner h4 {
@@ -921,139 +2261,34 @@ ul {
   color: #e0e0e0;
 }
 
+.academic-cta-banner p {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
 .academic-cta-button {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 12px;
   padding: 12px 28px;
   background: black;
   color: white;
   text-decoration: none;
   font-weight: 600;
   border-radius: 999px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .academic-cta-button:hover {
   background: #222;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .academic-section-heading {
-    font-size: 28px;
-  }
-  .academic-section-subtext {
-    font-size: 16px;
-  }
-  .academic-cta-banner h4 {
-    font-size: 22px;
-  }
-}
-/*demo */
-.academic-qsm-section {
-  background: #f8fbff;
-  padding: 80px 20px;
-  font-family: "Segoe UI", sans-serif;
-  text-align: center;
-}
-
-.academic-qsm-container {
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.academic-qsm-heading {
-  font-size: 32px;
-  font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 16px;
-}
-
-.academic-qsm-subtext {
-  font-size: 18px;
-  color: #555;
-  margin-bottom: 48px;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.academic-qsm-card {
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  padding: 24px;
-  gap: 24px;
-  justify-content: center;
-}
-
-.academic-qsm-image img {
-  width: 180px;
-  height: 180px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 100%;
-  border: 4px solid #3f66e0;
-}
-
-.academic-qsm-content {
-  max-width: 500px;
-  text-align: left;
-}
-
-.academic-qsm-badge {
-  font-size: 14px;
-  font-weight: 600;
-  color: #3f66e0;
-  background: #e5f0ff;
-  padding: 6px 12px;
-  display: inline-block;
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-
-.academic-qsm-button {
-  display: inline-block;
-  background: #3f66e0;
-  color: white;
-  padding: 12px 24px;
-  font-size: 16px;
-  font-weight: 600;
-  border-radius: 999px;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
-  margin-bottom: 16px;
-}
-
-.academic-qsm-button:hover {
-  background: #2c4ecf;
   transform: translateY(-2px);
 }
 
-.academic-qsm-rating {
-  font-size: 24px;
-  color: #f7b500;
-  letter-spacing: 2px;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .academic-qsm-card {
-    flex-direction: column;
-    text-align: center;
-  }
-  .academic-qsm-content {
-    text-align: center;
-  }
-  .academic-qsm-image img {
-    width: 140px;
-    height: 140px;
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
-/*team */
 .academic-about-section {
   background: #fdfdfd;
   padding: 80px 20px;
@@ -1141,8 +2376,19 @@ ul {
   color: #666;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
+  .academic-section-heading {
+    font-size: 28px;
+  }
+  .academic-section-subtext {
+    font-size: 16px;
+  }
+  .academic-cta-banner h4 {
+    font-size: 22px;
+  }
+  .academic-cta-banner p {
+    font-size: 15px;
+  }
   .academic-about-heading {
     font-size: 28px;
   }
@@ -1157,216 +2403,26 @@ ul {
     height: 100px;
   }
 }
-/* join */
-.academic-join-section {
-  background: #f6faff;
-  padding: 80px 20px;
-  font-family: "Segoe UI", sans-serif;
+:root {
+  --primary-blue: #3f66e0;
+  --light-blue-bg: #eef4ff;
+  --dark-text: #1a1a1a;
+  --soft-text: #444;
+  --bg-light: #f9fafc;
+  --radius: 16px;
+  --shadow-light: 0 6px 16px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 12px 24px rgba(0, 0, 0, 0.12);
+  --transition: all 0.3s ease;
 }
 
-.academic-join-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.academic-join-heading {
-  text-align: center;
-  font-size: 36px;
-  font-weight: 800;
-  margin-bottom: 10px;
-  color: #1a1a1a;
-}
-
-.academic-join-intro {
-  text-align: center;
-  font-size: 20px;
-  font-weight: 600;
-  color: #3f66e0;
-  margin-bottom: 40px;
-}
-
-.academic-join-content p,
-.academic-join-focus p,
-.academic-join-call p {
-  font-size: 16px;
-  line-height: 1.7;
-  color: #444;
-  margin-bottom: 20px;
-}
-
-.academic-join-focus h3,
-.academic-join-call h3,
-.academic-join-team h3 {
-  font-size: 24px;
-  font-weight: 700;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  color: #3f66e0;
-}
-
-.academic-join-highlight {
-  background: #eaf3fd;
-  padding: 16px 20px;
-  border-left: 4px solid #3f66e0;
-  border-radius: 8px;
-  font-weight: 600;
-  color: #222;
-}
-
-.academic-join-button {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 28px;
-  background: #3f66e0;
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 999px;
-  transition: background 0.3s ease;
-}
-
-.academic-join-button:hover {
-  background: #2c4ecf;
-}
-
-.academic-join-team-desc {
-  font-size: 16px;
-  margin-bottom: 30px;
-  color: #555;
-  text-align: center;
-}
-
-.academic-join-team-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 32px;
-}
-
-.academic-team-card {
-  background: white;
-  padding: 24px;
-  border-radius: 16px;
-  text-align: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.academic-team-card:hover {
-  transform: translateY(-6px);
-}
-
-.academic-team-card img {
-  width: 120px;
-  height: 120px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #3f66e0;
-  margin-bottom: 16px;
-}
-
-.academic-team-card h4 {
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: #222;
-}
-
-.academic-team-card p {
-  font-size: 14px;
-  color: #666;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .academic-join-heading {
-    font-size: 28px;
-  }
-  .academic-join-intro {
-    font-size: 18px;
-  }
-  .academic-join-team-grid {
-    grid-template-columns: 1fr;
-  }
-  .academic-team-card img {
-    width: 100px;
-    height: 100px;
-  }
-}
-/*advisory */
-.academic-advisory-section {
-  background: #fff;
-  padding: 80px 20px;
-  font-family: "Segoe UI", sans-serif;
-}
-
-.academic-advisory-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.academic-advisory-heading {
-  font-size: 36px;
-  text-align: center;
-  font-weight: 800;
-  color: #1a1a1a;
-  margin-bottom: 16px;
-}
-
-.academic-advisory-intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 48px;
-  font-size: 18px;
-  color: #555;
-}
-
-.academic-advisory-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 32px;
-}
-
-.academic-advisory-card {
-  background: #f8fbff;
-  border-left: 6px solid #3f66e0;
-  padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
-  transition: transform 0.3s ease;
-}
-
-.academic-advisory-card:hover {
-  transform: translateY(-6px);
-}
-
-.academic-advisory-card h3 {
-  font-size: 20px;
-  font-weight: 700;
-  margin-bottom: 12px;
-  color: #1a1a1a;
-}
-
-.academic-advisory-card p {
-  font-size: 15px;
-  color: #444;
-  line-height: 1.6;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .academic-advisory-heading {
-    font-size: 28px;
-  }
-  .academic-advisory-intro {
-    font-size: 16px;
-  }
-}
-/* about */
+/* ============================
+🏫 Academic About Section
+============================ */
 .academic-about-section {
-  background: #f9fafc;
-  padding: 80px 20px;
+  background: var(--bg-light);
+  padding: 100px 24px;
   font-family: "Segoe UI", sans-serif;
+  animation: fadeSlideUp 0.8s ease-out;
 }
 
 .academic-about-container {
@@ -1374,65 +2430,107 @@ ul {
   margin: 0 auto;
 }
 
+/* ============================
+📌 Section Headings
+============================ */
 .academic-about-heading {
-  font-size: 36px;
-  font-weight: 800;
+  font-size: 40px;
+  font-weight: 900;
   text-align: center;
-  margin-bottom: 10px;
-  color: #1a1a1a;
+  margin-bottom: 12px;
+  color: var(--dark-text);
 }
 
 .academic-about-subheading {
   font-size: 24px;
-  color: #3f66e0;
+  color: var(--primary-blue);
   font-weight: 700;
-  margin: 40px 0 20px;
+  margin: 40px 0 24px;
   text-align: center;
+  line-height: 1.4;
+  position: relative;
 }
 
+.academic-about-subheading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary-blue);
+  margin: 12px auto 0;
+  border-radius: 2px;
+  opacity: 0.9;
+}
+
+/* ============================
+📖 Paragraph Content
+============================ */
 .academic-about-history p,
 .academic-about-culture p {
-  font-size: 16px;
-  color: #444;
-  line-height: 1.7;
-  margin-bottom: 16px;
+  font-size: 17px;
+  color: var(--soft-text);
+  line-height: 1.75;
+  margin-bottom: 24px;
   text-align: center;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
 
+/* ============================
+💡 Highlight Block
+============================ */
 .academic-about-highlight {
   font-weight: 600;
   color: #222;
-  background: #eef4ff;
-  padding: 16px;
-  border-left: 4px solid #3f66e0;
-  border-radius: 8px;
-  margin-top: 24px;
+  background: var(--light-blue-bg);
+  padding: 20px 24px;
+  border-left: 5px solid var(--primary-blue);
+  border-radius: var(--radius);
+  margin: 36px auto 0;
+  max-width: 900px;
+  box-shadow: var(--shadow-light);
+  text-align: center;
+  font-size: 1.05rem;
 }
 
+/* ============================
+👥 Team Grid
+============================ */
 .academic-about-team {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 32px;
-  margin-top: 48px;
+  margin-top: 64px;
 }
 
+/* ============================
+📇 Team Cards
+============================ */
 .academic-team-card {
-  background: white;
-  padding: 24px;
-  border-radius: 16px;
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: var(--radius);
   text-align: center;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: var(--shadow-light);
+  transition: var(--transition);
+  position: relative;
+  opacity: 0;
+  transform: translateY(30px);
+  will-change: transform, box-shadow;
+}
+
+.academic-team-card.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .academic-team-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-hover);
 }
 
+/* 🖼️ Avatar Image */
 .academic-team-card img {
   width: 120px;
   height: 120px;
@@ -1440,25 +2538,39 @@ ul {
      object-fit: cover;
   border-radius: 50%;
   margin-bottom: 16px;
-  border: 4px solid #3f66e0;
+  border: 4px solid var(--primary-blue);
+  transition: var(--transition);
+  box-shadow: 0 4px 10px rgba(63, 102, 224, 0.2);
 }
 
+.academic-team-card:hover img {
+  box-shadow: 0 6px 20px rgba(63, 102, 224, 0.35);
+}
+
+/* 🧑 Name + Role */
 .academic-team-card h4 {
   font-size: 18px;
   font-weight: 700;
   color: #222;
   margin-bottom: 6px;
+  transition: color 0.3s ease;
+}
+
+.academic-team-card:hover h4 {
+  color: var(--primary-blue);
 }
 
 .academic-team-card p {
-  font-size: 14px;
+  font-size: 14.5px;
   color: #666;
 }
 
-/* Responsive Tweaks */
+/* ============================
+📱 Responsive Adjustments
+============================ */
 @media (max-width: 768px) {
   .academic-about-heading {
-    font-size: 28px;
+    font-size: 30px;
   }
   .academic-about-subheading {
     font-size: 20px;
@@ -1467,31 +2579,33 @@ ul {
     width: 100px;
     height: 100px;
   }
+  .academic-about-highlight {
+    font-size: 15.5px;
+    padding: 18px;
+  }
 }
-/* Google Calender */
-.calendar-section {
-  text-align: center;
-  padding: 60px 20px;
-  background: #f9f9f9;
+@media (max-width: 480px) {
+  .academic-about-highlight {
+    font-size: 14.5px;
+    padding: 16px;
+  }
+  .academic-team-card {
+    padding: 24px 16px;
+  }
+  .academic-team-card p {
+    font-size: 13.5px;
+  }
 }
-
-.calendar-section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #2e66e5;
-}
-
-.calendar-container {
-  max-width: 800px;
-  margin: 0 auto;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-}
-
-.calendar-iframe {
-  width: 100%;
-  height: 600px;
-  border: none;
+/* ============================
+💫 Animations
+============================ */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
