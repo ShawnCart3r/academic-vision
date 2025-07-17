@@ -233,6 +233,41 @@ searchInput.addEventListener("blur", () => {
     searchResults.innerHTML = "";
   }, 150);
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+  accordionHeaders.forEach((header) => {
+    header.addEventListener('click', () => {
+      const accordion = header.parentElement as HTMLElement;
+      const content = accordion.querySelector('.accordion-content') as HTMLElement;
+
+      const isOpen = accordion.classList.contains('open');
+
+      // Close all accordions
+      document.querySelectorAll('.accordion.open').forEach((openAccordion) => {
+        openAccordion.classList.remove('open');
+        const openContent = openAccordion.querySelector('.accordion-content') as HTMLElement;
+        if (openContent) {
+          openContent.style.maxHeight = '';
+        }
+      });
+
+      // Toggle current accordion
+      if (!isOpen) {
+        accordion.classList.add('open');
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        accordion.classList.remove('open');
+        content.style.maxHeight = '';
+      }
+    });
+  });
+});
+
+
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const headers = document.querySelectorAll<HTMLDivElement>(".toggle-header");
 

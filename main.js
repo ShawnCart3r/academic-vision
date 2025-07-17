@@ -200,6 +200,33 @@ searchInput.addEventListener("blur", function () {
         searchResults.innerHTML = "";
     }, 150);
 });
+document.addEventListener('DOMContentLoaded', function () {
+    var accordionHeaders = document.querySelectorAll('.accordion-header');
+    accordionHeaders.forEach(function (header) {
+        header.addEventListener('click', function () {
+            var accordion = header.parentElement;
+            var content = accordion.querySelector('.accordion-content');
+            var isOpen = accordion.classList.contains('open');
+            // Close all accordions
+            document.querySelectorAll('.accordion.open').forEach(function (openAccordion) {
+                openAccordion.classList.remove('open');
+                var openContent = openAccordion.querySelector('.accordion-content');
+                if (openContent) {
+                    openContent.style.maxHeight = '';
+                }
+            });
+            // Toggle current accordion
+            if (!isOpen) {
+                accordion.classList.add('open');
+                content.style.maxHeight = content.scrollHeight + 'px';
+            }
+            else {
+                accordion.classList.remove('open');
+                content.style.maxHeight = '';
+            }
+        });
+    });
+});
 document.addEventListener("DOMContentLoaded", function () {
     var headers = document.querySelectorAll(".toggle-header");
     headers.forEach(function (header) {
