@@ -79,6 +79,54 @@
 .footer-right button:hover {
   background: #1e2656;
 }
+.search-feature {
+  position: relative;
+  max-width: 320px;
+  margin-bottom: 20px;
+}
+
+.search-feature input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  z-index: 999;
+  max-height: 200px;
+  overflow-y: auto;
+  border-radius: 0 0 8px 8px;
+}
+
+.search-result-item {
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-result-item:hover,
+.search-result-item.active {
+  background-color: #f0f4ff;
+}
+
+
+.no-result {
+  padding: 12px;
+  color: #888;
+}
+.company {
+  color: white !important;
+}
 
 /* Responsive */
 @media (max-width: 768px) {

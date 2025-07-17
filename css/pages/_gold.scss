@@ -172,6 +172,46 @@
     transform: translateY(0);
   }
 }
+.toggle-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.toggle-item {
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.toggle-header {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+.toggle-header:hover {
+  color: var(--primary-color, #3b65c4);
+}
+
+.toggle-content {
+  display: none;
+  font-size: 0.95rem;
+  color: #555;
+  padding: 6px 0 10px;
+}
+
+.toggle-item.active .toggle-content {
+  display: block;
+}
+
+.toggle-item.active .arrow {
+  transform: rotate(180deg);
+  transition: transform 0.2s ease;
+}
 
 /* 🎖️ Tier Color Backgrounds */
 .standard-card.gold {
@@ -233,4 +273,3 @@
   background: #2d4fb2;
   transform: translateY(-2px);
 }
-
