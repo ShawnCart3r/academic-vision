@@ -385,6 +385,10 @@ ul {
   color: white !important;
 }
 
+.font-size {
+  font-size: 14px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .contact-container,
@@ -429,6 +433,41 @@ ul {
     box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
   }
 }
+/*mission */
+/* services */
+/*demo */
+/*team */
+/* join */
+/*advisory */
+/* about */
+/* Google Calender */
+.calendar-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.calendar-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #2e66e5;
+}
+
+.calendar-container {
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.calendar-iframe {
+  width: 100%;
+  height: 600px;
+  border: none;
+}
+
 /* Survey */
 .survey-banner {
   background: linear-gradient(to right, #6a82fb, #a18cd1);
@@ -655,6 +694,15 @@ ul {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* ✅ Override for .image-3 specifically */
+.edu-images img.image-3 {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border: 2px solid red;
+}
+
+/* Hover effect */
 .edu-images img:hover {
   transform: scale(1.02);
   box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
@@ -668,6 +716,11 @@ ul {
   }
   .edu-images {
     justify-content: center;
+  }
+  /* Optional: make image-3 scale down on smaller screens */
+  .edu-images img.image-3 {
+    max-width: 100%;
+    width: 100%;
   }
 }
 /* Success */
@@ -833,41 +886,76 @@ ul {
   background: #1e2656;
 }
 
-/*mission */
-/* services */
-/*demo */
-/*team */
-/* join */
-/*advisory */
-/* about */
-/* Google Calender */
-.calendar-section {
-  text-align: center;
-  padding: 60px 20px;
-  background: #f9f9f9;
-}
-
-.calendar-section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #2e66e5;
-}
-
-.calendar-container {
-  max-width: 800px;
-  margin: 0 auto;
-  border: 1px solid #ddd;
+.deck-stack {
+  position: relative;
+  width: min(90vw, 320px);
+  height: calc(min(90vw, 320px) * 1.4); /* Card ratio: 2.5"x3.5" */
+  transform: translateX(170px);
   border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  perspective: 1000px;
+  cursor: pointer;
+  touch-action: manipulation; /* improves tap responsiveness */
 }
 
-.calendar-iframe {
+.deck-card {
+  position: absolute;
   width: 100%;
-  height: 600px;
-  border: none;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  transform: translateY(0) scale(1);
+  transition: transform 0.8s ease, opacity 0.8s ease;
+  z-index: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  pointer-events: none;
 }
 
+.deck-card.active {
+  opacity: 1;
+  z-index: 3;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.deck-card.next {
+  opacity: 0.9;
+  z-index: 2;
+  transform: translateY(6%) scale(0.96); /* subtle peek */
+}
+
+.deck-card.exit {
+  transform: translateX(-120%) rotate(-6deg);
+  opacity: 0;
+  z-index: 1;
+}
+
+.deck-card.active:hover {
+  transform: translateY(-5%) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+}
+
+/* ✅ Mobile tuning */
+@media (max-width: 430px) {
+  .deck-stack {
+    width: 90vw; /* slightly smaller for balance */
+    height: 126vw; /* maintains card ratio */
+    margin: 1.5rem auto; /* ✅ less vertical space, still centered */
+    background: pink;
+  }
+  .deck-card.next {
+    transform: translateY(5%) scale(0.95);
+  }
+  .deck-card.exit {
+    transform: translateX(-100%) rotate(-4deg);
+  }
+}
 :root {
   --primary-blue: #3f66e0;
   --blue-bg: #f8fbff;
